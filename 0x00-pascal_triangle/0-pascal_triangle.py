@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 solve the problem of pascal_triangle
 """
