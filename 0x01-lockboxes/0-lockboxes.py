@@ -29,7 +29,7 @@ def canUnlockAll(boxes):
         if element == None:
             continue
 
-        if element != 0 and element != length and boxes[element] != 1:
+        if element != 0 and element < length and boxes[element] != 1:
             if len(boxes[element]) == 0:
                 boxes[0].append(None)
             else:
