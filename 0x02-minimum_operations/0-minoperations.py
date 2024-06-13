@@ -29,7 +29,7 @@ def fun(n, copy, paste, num_opt):
 
 def minOperations(n):
     """ return the fewest number of the operations """
-    if n == 0 or n == 1:
+    if n == 0 or n == 1 or type(n) != int:
         return 0
 
     return fun(n, 1, 1, 0)
