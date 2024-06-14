@@ -16,7 +16,7 @@ def minOperations(n):
     and paste but if we are pasting only we will increase num_opt by 1"""
     if n == 0 or n == 1 or type(n) != int:
         return 0
- 
+
     paste = 1
     copy = 1
     num_opt = 0
