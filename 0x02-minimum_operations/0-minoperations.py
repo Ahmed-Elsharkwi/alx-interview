@@ -5,34 +5,29 @@ to reach the number of n which is the number of letter H
 """
 
 
-def fun(n, copy, paste, num_opt, new_list):
-    """ return a number of operations """
-    opt_2 = 0
-    if paste > n:
-        return 0
-    if paste == n:
-        return num_opt
-
-    if new_list[paste] is None:
-        copy_1 = paste
-        opt_1 = fun(n, copy_1, paste + copy_1, num_opt + 2, new_list)
-    else:
-        opt_1 = new_list[paste]
-
-    if paste != 1:
-        opt_2 = fun(n, copy, paste + copy, num_opt + 1, new_list)
-
-    if opt_1 != 0 and opt_2 != 0:
-        return min(opt_1, opt_2)
-
-    if opt_1 != 0 or opt_2 != 0:
-        return max(opt_1, opt_2)
-    return 0
-
-
 def minOperations(n):
-    """ return the fewest number of the operations """
+    """ we are get inside a loop and every iteration we will check
+    if the paste which the number of letters H with the reqired number
+    of H number which n.
+    we will check if the remaing letters can be achived by past or
+    copy all and paste and if the remaing is divisable by number of letters
+    H which we have now we will copy all and paste othewise we will paste only
+    with copy and paste all we will increase the num_opt by 2 because we copy
+    and paste but if we are pasting only we will increase num_opt by 1"""
     if n == 0 or n == 1 or type(n) != int:
         return 0
-    new_list = [None] * (n + 1)
-    return fun(n, 1, 1, 0, new_list)
+ 
+    paste = 1
+    copy = 1
+    num_opt = 0
+
+    while paste < n:
+
+        if (n - paste) % paste == 0:
+            copy = paste
+            num_opt += 2
+        else:
+            num_opt += 1
+        paste += copy
+
+    return num_opt
