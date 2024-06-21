@@ -23,14 +23,12 @@ def main():
     counter = 1
     try:
         for line in sys.stdin:
-            print(line)
             elements = line.split(" ")
             res = re.search(
                 r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
                 r'\s\-\s\[\d{4}\-\d{2}\-\d{2}\s\d{2}\:'
                 r'\d{2}\:\d{2}\.\d+\]\s\"GET\s/projects/260\sHTTP/1.1\"'
                 r'\s\d{1,3}\s\d{1,4}$', line)
-            print(res)
             if res is not None:
                 size += int(elements[8])
                 if int(elements[7]) in states_code:
