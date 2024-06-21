@@ -35,10 +35,10 @@ def main():
                 if number in states_code:
                     states_code[int(elements[7])] += 1
 
-            if counter == 10:
-                happen(size, states_code)
-                counter = 0
-            counter += 1
+                if counter == 10:
+                    happen(size, states_code)
+                    counter = 0
+                counter += 1
     except Exception as err:
         pass
 
