@@ -10,6 +10,6 @@ for i in range(100):
         random.randint(1, 255), random.randint(1, 255), random.randint(1, 255), random.randint(1, 255),
         datetime.datetime.now(),
         random.choice([200, 301, 400, 401, 403, 404, 405, 500]),
-        random.randint(1, 1024)
+        "ahmed"
     ))
     sys.stdout.flush()

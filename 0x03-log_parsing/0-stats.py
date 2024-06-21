@@ -31,18 +31,18 @@ def main():
                 r'\s\d{1,3}\s\d{1,4}$', line)
             if res is not None:
                 size += int(elements[8])
-                if int(elements[7]) in states_code:
+                number = int(elements[7])
+                if number in states_code:
                     states_code[int(elements[7])] += 1
 
-                if counter == 10:
-                    happen(size, states_code)
-                    counter = 0
-                counter += 1
+            if counter == 10:
+                happen(size, states_code)
+                counter = 0
+            counter += 1
     except Exception as err:
         pass
 
     finally:
         happen(size, states_code)
-
 
 main()
