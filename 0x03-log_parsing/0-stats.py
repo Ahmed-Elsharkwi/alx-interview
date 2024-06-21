@@ -41,6 +41,4 @@ def main():
     except KeyboardInterrupt:
         happen(size, states_code)
 
-
-if __name__ == '__main__':
-    main()
+main()
