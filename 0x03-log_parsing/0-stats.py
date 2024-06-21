@@ -38,7 +38,11 @@ def main():
                     happen(size, states_code)
                     counter = 0
                 counter += 1
-    except KeyboardInterrupt:
+    except Exception as err:
+        pass
+
+    finally:
         happen(size, states_code)
+
 
 main()
