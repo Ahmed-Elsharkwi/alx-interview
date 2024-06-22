@@ -19,7 +19,8 @@ def main():
     """ main function """
     size = 0
     states_code = {
-        "200": 0, "301": 0, "400": 0, "401": 0, "403": 0, "404": 0, "405": 0, "500": 0}
+        "200": 0, "301": 0, "400": 0,
+        "401": 0, "403": 0, "404": 0, "405": 0, "500": 0}
     counter = 1
     try:
         for line in sys.stdin:
@@ -44,5 +45,6 @@ def main():
 
     finally:
         happen(size, states_code)
+
 
 main()
