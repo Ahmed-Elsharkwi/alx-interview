@@ -26,14 +26,19 @@ def validUTF8(data):
             continue
 
         elif binary_list[counter][0:3] == '110':
-            limit = 2
+            #limit = 2
+            res = True
 
         elif binary_list[counter][0:4] == '1110':
-            limit = 3
+            #limit = 3
+            res = True
 
         elif binary_list[counter][0:5] == '11110':
-            limit = 4
-
+            #limit = 4
+            res = True
+        else:
+            return False
+        """
         i = 1
         while i < limit:
             if i < le and binary_list[counter + i][0:2] == '10':
@@ -42,5 +47,6 @@ def validUTF8(data):
                 return False
             i += 1
         counter = i
-
+        """
+        counter += 1
     return res
