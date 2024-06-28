@@ -5,7 +5,7 @@
 def validUTF8(data):
     """ utf-8 validation """
     binary_list = []
-    res = False
+    res = True
     counter = 0
 
     for element in data:
@@ -14,9 +14,10 @@ def validUTF8(data):
 
         if length < 8:
             binary_element = ('0' * (8 - length)) + str(binary_element)
-
+        elif length > 8:
+            binary_element = binary_element[-8:]
         binary_list.append(binary_element)
-    #print(binary_list)
+
     le = len(binary_list)
     while counter < le:
 
@@ -26,29 +27,23 @@ def validUTF8(data):
             continue
 
         elif binary_list[counter][0:3] == '110':
-            #limit = 2
-            res = True
+            limit = 2
 
         elif binary_list[counter][0:4] == '1110':
-            #limit = 3
-            res = True
+            limit = 3
 
         elif binary_list[counter][0:5] == '11110':
-            #limit = 4
-            res = True
-        elif binary_list[counter][0:2] == '10':
-            res = True
+            limit = 4
+
         else:
             return False
-        """
+
         i = 1
         while i < limit:
-            if i < le and binary_list[counter + i][0:2] == '10':
+            if counter + i < le and binary_list[counter + i][0:2] == '10':
                 res = True
             else:
                 return False
             i += 1
-        counter = i
-        """
-        counter += 1
+        counter += i
     return res
