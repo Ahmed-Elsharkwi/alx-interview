@@ -17,7 +17,8 @@ def validUTF8(data):
 
         binary_list.append(binary_element)
 
-    while counter < len(binary_list):
+    le = len(binary_list)
+    while counter < le:
 
         if binary_list[counter][0] == '0':
             counter += 1
@@ -35,7 +36,7 @@ def validUTF8(data):
 
         i = 1
         while i < limit:
-            if binary_list[counter + i][0:2] == '10':
+            if i < le and binary_list[counter + i][0:2] == '10':
                 res = True
             else:
                 return False
