@@ -35,11 +35,11 @@ def validUTF8(data):
 
         i = 1
         while i < limit:
-            if binary_list[counter + i][0:1] == '10':
+            if binary_list[counter + i][0:2] == '10':
                 res = True
             else:
                 return False
-            counter += 1
+            i += 1
         counter = i
 
     return res
