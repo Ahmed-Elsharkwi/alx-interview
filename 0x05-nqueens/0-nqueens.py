@@ -37,7 +37,7 @@ def check(row, column, check_list, n):
     return True
 
 
-def nqeen(check_list, row, column, n):
+def nqeen(over_list, check_list, row, column, n):
     """ nqeen function """
     res = True
 
@@ -57,16 +57,16 @@ def nqeen(check_list, row, column, n):
                 del check_list[-1]
 
         if res is True:
-            res = nqeen(check_list, row + 1, i, n)
+            res = nqeen(over_list, check_list, row + 1, i, n)
             if res is False:
                 del check_list[-1]
 
-            if row != 0 and res is True:
-                return True
-
-            if row == 0 and res is True:
+            else:
                 print(check_list)
-
+                """
+                over_list.append(check_list)
+                """
+                del check_list[-1]
     return False
 
 
@@ -84,7 +84,9 @@ def main():
         print(f"N must be at least 4")
         exit(1)
 
-    nqeen("", 0, 0, int(sys.argv[1]))
+    over_list = []
+    nqeen(over_list, "", 0, 0, int(sys.argv[1]))
+    #print(over_list)
 
 
 main()
