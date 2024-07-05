@@ -72,16 +72,16 @@ def nqeen(check_list, row, column, n):
 
 def main():
     """ main function """
-    if len(sys.argv) > 2:
-        print(f"Usage: nqueens {sys.argv[1]}")
+    if len(sys.argv) != 2:
+        print(f"Usage: nqueens N")
         exit(1)
 
-    if isinstance(sys.argv[1], int):
-        print(f"{sys.argv[1]} must be a number")
+    if sys.argv[1].isdigit() is False:
+        print(f"N must be a number")
         exit(1)
 
     if int(sys.argv[1]) < 4:
-        print(f"{sys.argv[1]} must be at least 4")
+        print(f"N must be at least 4")
         exit(1)
 
     nqeen("", 0, 0, int(sys.argv[1]))
