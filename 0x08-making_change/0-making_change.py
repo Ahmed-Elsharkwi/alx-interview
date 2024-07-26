@@ -4,7 +4,7 @@
 
 def makeChange(coins, total):
     """ make change """
-    if total == 0:
+    if total <= 0:
         return 0
     db = [None] * (total + 1)
     db[0] = 0
