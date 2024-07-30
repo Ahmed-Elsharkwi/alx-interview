@@ -11,15 +11,15 @@ def island_perimeter(grid):
     for row in range(0, num_rows):
         for column in range(0, num_columns):
             if grid[row][column] == 1:
-                if row - 1 >= 0 and grid[row - 1][column] == 0:
+                if row - 1 < 0 or grid[row - 1][column] == 0:
                     perimeter += 1
 
-                if row + 1 != num_rows and grid[row + 1][column] == 0:
+                if row + 1 == num_rows or grid[row + 1][column] == 0:
                     perimeter += 1
 
-                if column - 1 >= 0 and grid[row][column - 1] == 0:
+                if column - 1 < 0 or grid[row][column - 1] == 0:
                     perimeter += 1
 
-                if column + 1 != num_columns and grid[row][column + 1] == 0:
+                if column + 1 == num_columns or grid[row][column + 1] == 0:
                     perimeter += 1
     return perimeter
