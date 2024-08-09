@@ -58,7 +58,7 @@ def isWinner(x, nums):
                     check_the_prime_number(num_list[index]) == 1):
 
                 length = del_target_number(num_list[index], num_list)
-               # print(f"{i}: ", length)
+
                 if maria_status == 0:
                     maria_score += 1
                     maria_status = 1
@@ -75,13 +75,11 @@ def isWinner(x, nums):
                     if ben_status == 1:
                         ben_score += 1
                 index += 1
-            #print(f"{i}: ", maria_score, ben_score)
 
         if maria_score > ben_score:
             maria_score_rounds += 1
         elif ben_score > maria_score:
             ben_score_rounds += 1
-        #print(f"round {i}: ",maria_score_rounds, ben_score_rounds)
     if maria_score_rounds > ben_score_rounds:
         return "Maria"
     elif ben_score_rounds > maria_score_rounds:
